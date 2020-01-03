@@ -1,0 +1,67 @@
+<div class="container-fluid p-5" style="background-color: cornflowerblue; width:100%; height:100%;">
+        <h5 class="text-center text-white">Welcome to Todo List Management System</h5>
+        <br>
+    <div class="container border rounded p-4" style="width:40vw;background-color: white;">
+        <h5 class="text-center">Sign Up</h5>
+        <br>
+        <div class="row py-3">
+            
+            <div class="col-lg-6 text-center">
+                <mat-form-field appearance="fill">
+                        <mat-label>First Name</mat-label>
+                    <input matInput [formControl]="firstName" required>
+                    <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 text-center">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                    <input matInput [formControl]="lastName" required>
+                    <mat-error *ngIf="lastName.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-6 text-center">
+                    <mat-form-field appearance="fill">
+                            <mat-label>Email</mat-label>
+                    <input matInput [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 text-center">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                    <input type="password" matInput [formControl]="password" required>
+                    <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-6 text-center">
+                    <mat-form-field appearance="fill">
+                            <mat-label>Country</mat-label>
+                        <mat-select [formControl]="countryCode" [(value)]="country" (selectionChange)="callWhenCountryChange()" required>
+                          <mat-option *ngFor="let country of countries" [value]="country.code">{{country.name}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="countryCode.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 text-center">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Phone</mat-label>
+                    <input type="number" onKeyPress="if(this.value.length==10) return false;" matInput [formControl]="phone" required>
+                    <mat-error *ngIf="phone.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-block btn-primary mx-auto" style="width:34vw" (click)="signupMethod()">Sign Up</button>
+        <br>
+        <div class="text-center">Have an account? <a [routerLink]="['/login']" class="text-primary">Login</a></div>
+    </div>
+</div>

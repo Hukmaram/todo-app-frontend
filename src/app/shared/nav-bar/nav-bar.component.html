@@ -1,0 +1,29 @@
+ 
+      <nav class="navbar navbar-expand-lg nnavbar-custom border-bottom" style="background-color: #3f51b5;color: #ffffff;">
+            <a class="navbar-brand">Hi , {{userName ? userName : 'Admin'}}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+              <span class="fa fa-bars fa-lg py-1 text-white"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/single-user-dashboard']" style="color: #ffffff;">My Todo <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/friends-dashboard']" style="color: #ffffff;">Friends's Todo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/friends']" style="color: #ffffff;">Friends</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link"[routerLink]="['/notification']" (click)="showNotificationModalMethod()" style="color: #ffffff;"><span matBadge="4" matBadgeColor="warn" matBadgeOverlap="false">Notification</span></a>
+                </li> -->
+                <li class="nav-item">
+                  <button class="nav-link" type="button" class="btn" (click)="logoutFunction()" style="color: #ffffff;">
+                      Log Out
+                    </button>
+                </li>
+              </ul>
+            </div>
+          </nav>

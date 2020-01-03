@@ -1,0 +1,42 @@
+<app-nav-bar></app-nav-bar>
+<div class="notifications-container">
+    <div *ngFor="let notification of notifications" class="notification">
+      <li>{{ notification.message }}</li>
+      <li>{{ notification.arrived }}</li>
+    </div>
+    <div *ngIf="notifications.length === 0" class="no-notifications">
+      <p>You don't have any notifications yet. . .</p>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Notifications</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <mat-list role="list">
+                <mat-list-item role="listitem"><div class="alert alert-warning alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Alert!</strong> This is Todo Notification.
+                  </div></mat-list-item>
+              
+              <mat-list-item role="listitem" class="mt-2"><div class="alert alert-warning alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Alert!</strong> This is Todo Notification.
+                  </div></mat-list-item>
+              </mat-list>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>

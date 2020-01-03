@@ -1,0 +1,58 @@
+<mat-tab-group>
+
+
+    <mat-tab label="Add Friend">
+        <ul *ngFor="let user of allUsers" class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                 <!-- <mat-icon mat-list-icon *ngIf="user.status=='online'" class='fas fa-circle p-0' style='font-size:8px;color:green'></mat-icon>
+                   <mat-icon mat-list-icon *ngIf="user.status!='online'" class='fas fa-circle p-0' style='font-size:8px;color:yellow'></mat-icon> -->
+                {{ user.firstName }} {{ user.lastName }}
+                <button *ngIf="!user.connected" class="btn btn-sm" style="background-color: #3f51b5;color: white;"
+                    (click)="selectUserToSentRequst(user)"><i class="fas fa-plus" style="font-size:10px"></i> Add
+                    Friend</button>
+                    <button *ngIf="user.connected" class="btn btn-sm" style="background-color: #3f51b5;color: white;"
+                    (click)="selectUserToUnfriend(user)"><i class="fas fa-minus" style="font-size:10px"></i> Unfriend</button>
+            </li>
+
+        </ul>
+    </mat-tab>
+
+
+    <mat-tab label="Sent Request">
+        <ul *ngFor="let sentReq of requestSents" class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ sentReq.friendName }}
+                <button class="btn btn-sm" style="background-color: #3f51b5;color: white;"
+                    (click)="selectUserToCancelRequst(sentReq)"><i class="fas fa-arrow-right"
+                        style="font-size:10px"></i> Cancel Request</button>
+            </li>
+        </ul>
+    </mat-tab>
+
+    <mat-tab label="Recieved Request">
+        <ul *ngFor="let recievedReq of requestRecieved" class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ recievedReq.friendName }}
+                <span class="ml-auto">
+                    <button class="btn btn-sm" style="background-color: #3f51b5;color: white;"
+                        (click)="selectUserToAcceptRequst(recievedReq)">Accept</button>&nbsp;&nbsp;
+                    <button class="btn btn-sm" style="background-color: #f8f6f6;"
+                        (click)="selectUserToRejectRequst(recievedReq)">Delete</button>
+                </span>
+            </li>
+        </ul>
+    </mat-tab>
+
+    <!-- <mat-tab label="My Friends">
+        <ul *ngFor="let user of allUsers" class="list-group">
+            <li *ngIf="user.connected" class="list-group-item d-flex justify-content-between align-items-center">
+                <p>{{ user.firstName }} {{ user.lastName }}</p>
+                <button class="btn btn-sm" style="background-color: #3f51b5;color: white;"
+                    (click)="selectToUnfriendMethod(user)"><i class="fas fa-minus" style="font-size:10px"></i> Remove
+                    Friend</button>
+            </li>
+        </ul>
+    </mat-tab> -->
+
+
+</mat-tab-group>
