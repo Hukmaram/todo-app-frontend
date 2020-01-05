@@ -1,9 +1,9 @@
-<div class="container-fluid p-5" style="background-color: cornflowerblue; width:100%; height:100%;">
+<div class="container-fluid" style="background-color: cornflowerblue; width:100%; height:100%;">
     <h5 class="text-center text-white">Welcome to Todo List Management System</h5>
     <br>
-    <div class="container border rounded p-4" style="width:30vw;background-color: white;">
+    <div class="container border rounded p-4 mydiv">
         <h5 class="text-center">Login</h5>
-        <div class="row py-3">
+        <div class="row">
             <div class="col-md-12 text-center">
                 <mat-form-field appearance="fill">
                     <mat-label>Enter Your Email</mat-label>
@@ -17,7 +17,7 @@
                     <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <br>
-                <button type="button" class="btn btn-block btn-primary mx-auto" style="width:16vw"
+                <button type="button" class="btn btn-block btn-primary mx-auto btnn"
                     (click)="signinMethod()">Sign in</button>
                 <br>
                 <div class="text-center"><a [routerLink]="['/forgotpassword']">Lost your Password?</a></div>
