@@ -10,7 +10,7 @@ import 'rxjs/add/operator/do';
 })
 export class AppService {
   //private baseUrl="https://chatapi.edwisor.com";
-  private baseUrl = "http://localhost:3000/api/v1";
+  private baseUrl = "http://api.fixercart.com/api/v1";
 
   constructor(private http:HttpClient) { }
 

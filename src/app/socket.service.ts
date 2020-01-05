@@ -11,7 +11,7 @@ import * as io from 'socket.io-client';
   providedIn: 'root'
 })
 export class SocketService {
-  public baseUrl = "http://localhost:3000";
+  public baseUrl = "http://api.fixercart.com";
   public socket;
 
   constructor(private http: HttpClient) {
