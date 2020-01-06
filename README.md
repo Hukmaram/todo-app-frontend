@@ -57,6 +57,7 @@ Note : You can skip this steps if you have Node ,npm and angularCLI installed on
 6. Navigate to http://localhost:4200/ via browser . You will see the application is running.
 
  * [Live Demo](http://fixercart.com/) - Application is up and running here
+ * [api.fixercart.com](api.fixercart.com) - REST API
  
 ## Built With
 * Angular - The web framework used for Frontend Design
