@@ -73,5 +73,5 @@ Note : You can skip this steps if you have Node ,npm and angularCLI installed on
 ## License
 This project is licensed under the MIT License
 
-## Repository for Frontend
+## Repository for Backend
 [https://github.com/Hukmaram/todo-app-backend.git](https://github.com/Hukmaram/todo-app-backend.git)
